@@ -47,6 +47,8 @@ const Card = ({ title, description, imageUrl, link }: CardProps) => {
             translateX={-40}
             as="a"
             href={link || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
           >
             Visit Now →

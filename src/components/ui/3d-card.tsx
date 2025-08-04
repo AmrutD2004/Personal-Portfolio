@@ -11,9 +11,9 @@ import React, {
   Dispatch,
   SetStateAction,
   MouseEvent,
-  ElementType,
   HTMLAttributes,
 } from "react";
+import { ComponentPropsWithoutRef, ElementType } from "react";
 
 // Create context
 const MouseEnterContext = createContext<
@@ -104,9 +104,9 @@ export const CardBody = ({
 };
 
 // CardItem Props
-type CardItemProps = HTMLAttributes<HTMLDivElement> & {
-  as?: ElementType;
-  children: ReactNode;
+type CardItemProps<T extends ElementType> = {
+  as?: T;
+  children: React.ReactNode;
   className?: string;
   translateX?: number | string;
   translateY?: number | string;
@@ -114,11 +114,10 @@ type CardItemProps = HTMLAttributes<HTMLDivElement> & {
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-};
+} & ComponentPropsWithoutRef<T>;
 
-// CardItem
-export const CardItem = ({
-  as: Tag = "div",
+export const CardItem = <T extends ElementType = "div">({
+  as,
   children,
   className,
   translateX = 0,
@@ -128,31 +127,27 @@ export const CardItem = ({
   rotateY = 0,
   rotateZ = 0,
   ...rest
-}: CardItemProps) => {
-  const ref = useRef<HTMLDivElement>(null);
+}: CardItemProps<T>) => {
+  const Tag = as || "div";
+  const ref = useRef<HTMLElement>(null);
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
-    if (!ref.current) return;
+    handleAnimations();
+  }, [isMouseEntered]);
 
+  const handleAnimations = () => {
+    if (!ref.current) return;
     if (isMouseEntered) {
       ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
     } else {
       ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     }
-  }, [
-    isMouseEntered,
-    translateX,
-    translateY,
-    translateZ,
-    rotateX,
-    rotateY,
-    rotateZ,
-  ]);
+  };
 
   return (
     <Tag
-      ref={ref}
+      ref={ref as any}
       className={cn("w-fit transition duration-200 ease-linear", className)}
       {...rest}
     >
