@@ -42,7 +42,7 @@ const HeroSection = () => {
     return (
         <div>
             {/* Hero Section */}
-            <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
+            <div className="relative mx-auto  flex max-w-7xl flex-col items-center justify-center">
                 <Spotlight />
                 {/* Decorative elements */}
                 <div className="absolute inset-y-0 left-0 h-full w-px">
