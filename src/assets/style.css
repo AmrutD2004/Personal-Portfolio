@@ -1,0 +1,47 @@
+.social-links button {
+  background-color: #6e7276;
+  font-size: medium;
+  color: white;
+  padding: 20px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.social-links button:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.tech-stack{
+   background-color: #6e7276;
+   transition: all 0.3s ease;
+   color: white;
+}
+.tech-stack:hover{
+    background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
+.tech-stack span:hover{
+  color: black;
+  transform: translateY(-2px);
+}
+
+@keyframes appear{
+  from{
+    opacity: 0;
+    scale: 0.5;
+  }to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+.block{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 20%;
+}
+.block1{
+  animation: appear 0.9s alternate;
+}

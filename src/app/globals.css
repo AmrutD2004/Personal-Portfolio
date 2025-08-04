@@ -24,3 +24,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 15s linear infinite;
+}
+
+.hover\:animation-paused:hover {
+  animation-play-state: paused;
+}
+
+.scroll-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll-x 30s linear infinite;
+  will-change: transform; /* Optimize performance */
+}
+
+.scroll-content:hover {
+  animation-play-state: paused;
+}
+
+.scroll-item {
+  flex-shrink: 0;
+}
