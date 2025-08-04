@@ -28,7 +28,7 @@ const Navbar = ({ className }: { className?: string }) => {
           <MenuItem setActive={setActive} active={active} item='Resume'>
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink
-              href="./pdf/amrutresume"
+              href="./pdf/amrutresume.pdf"
               download="AmrutDeshpande_Resume.pdf"
               className="flex items-center gap-2"
             >
