@@ -24,9 +24,8 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden">
         <div className="fixed top-0 w-full z-[100]">
-          <Navbar />
         </div>
-        <main className="pt-20">
+        <main className="pt-5">
           {children}
         </main>
       </body>

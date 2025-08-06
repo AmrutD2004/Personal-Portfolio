@@ -12,6 +12,8 @@ import { DiDjango } from "react-icons/di";
 import Link from 'next/link';
 import Card from './Card';
 import '../app/globals.css';
+import { GoDownload } from "react-icons/go";
+
 import '../assets/style.css';
 
 const HeroSection = () => {
@@ -111,7 +113,16 @@ const HeroSection = () => {
                             <IoMdMail className='me-2' />Mail
                         </button>
                     </Link>
+                    
                 </div>
+                <div className='flex flex-col mt-9 social-links block1'>
+                        <Link href="/pdf/AmrutDeshpandeResume.pdf"
+          download="AmrutDeshpande_Resume.pdf">
+                        <button className='flex items-center font-medium'>
+                            <GoDownload className='me-2 font-medium' />Resume
+                        </button>
+                    </Link>
+                    </div>
                 
                 {/* Scroll down indicator */}
                 <div className="flex">
