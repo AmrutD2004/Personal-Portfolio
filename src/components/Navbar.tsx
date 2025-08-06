@@ -1,65 +1,86 @@
-"use client";
-import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/ui/navbar-menu";
-import { cn } from "@/utils/cn";
-import Link from "next/link";
-import { FiMenu } from "react-icons/fi"; // hamburger icon
+"use client"
 
-const Navbar = ({ className }: { className?: string }) => {
-  const [active, setActive] = useState<string | null>(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+import Link from "next/link"
+import { FiMenu } from "react-icons/fi"
+import { Button } from "@/components/ui/button"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover"
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-
+const Navbar = () => {
   return (
-    <div className={cn("fixed top-0 left-0 w-full z-50", className)}>
-      {/* Desktop Menu */}
-      <div className="hidden md:flex justify-center">
-        <Menu setActive={setActive}>
-          <Link href="#Home"><MenuItem setActive={setActive} active={active} item="Home" /></Link>
-          <Link href="#about"><MenuItem setActive={setActive} active={active} item="About" /></Link>
-          <Link href="#projects"><MenuItem setActive={setActive} active={active} item="Projects" /></Link>
-          <Link href="#contact"><MenuItem setActive={setActive} active={active} item="Contact" /></Link>
-          <MenuItem setActive={setActive} active={active} item="Resume">
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink
-                href="./pdf/amrutresume.pdf"
-                download="AmrutDeshpande_Resume.pdf"
-                className="flex items-center gap-2"
+    <header className="w-full px-6 py-4 flex items-center justify-center bg-black">
+
+      {/* Desktop Navigation */}
+      <NavigationMenu className="hidden md:flex">
+        <NavigationMenuList className="gap-6">
+          {["Home", "About", "Projects", "Contact"].map((item) => (
+            <NavigationMenuItem key={item}>
+              <NavigationMenuLink
+                asChild
+                className={navigationMenuTriggerStyle()}
               >
-                Download Resume
-              </HoveredLink>
-            </div>
-          </MenuItem>
-        </Menu>
-      </div>
+                <Link href={`#${item.toLowerCase()}`}>{item}</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          ))}
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link
+                href="/pdf/amrutresume.pdf"
+                download="AmrutDeshpande_Resume.pdf"
+              >
+                Resume
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
 
-      {/* Mobile Menu Button */}
-      <div className="flex items-center justify-between px-6 py-4 md:hidden bg-white dark:bg-black shadow-md">
-        <span className="font-bold text-lg text-black dark:text-white">Amrut.dev</span>
-        <button onClick={toggleMobileMenu} className="text-2xl text-black dark:text-white">
-          <FiMenu />
-        </button>
-      </div>
-
-      {/* Mobile Menu Items */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden flex flex-col items-center space-y-4 bg-white dark:bg-black py-6 shadow-lg">
-          <a href="#Home" onClick={toggleMobileMenu} className="text-black dark:text-white">Home</a>
-          <a href="#about" onClick={toggleMobileMenu} className="text-black dark:text-white">About</a>
-          <a href="#projects" onClick={toggleMobileMenu} className="text-black dark:text-white">Projects</a>
-          <a href="#contact" onClick={toggleMobileMenu} className="text-black dark:text-white">Contact</a>
-          <a
-            href="./pdf/amrutresume.pdf"
-            download="AmrutDeshpande_Resume.pdf"
-            className="text-black dark:text-white"
+      {/* Mobile Menu */}
+      <div className="md:hidden">
+  <Popover>
+    <PopoverTrigger asChild>
+      <Button
+        className="bg-black text-white border-none hover:bg-black focus:ring-0 focus:outline-none"
+        size="icon"
+      >
+        <FiMenu className="h-6 w-6" />
+      </Button>
+    </PopoverTrigger>
+    <PopoverContent align="end" className="w-56 p-4">
+      <nav className="flex flex-col gap-3">
+        {["Home", "About", "Projects", "Contact"].map((item) => (
+          <Link
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            className="hover:text-primary text-sm font-medium"
           >
-            Resume
-          </a>
-        </div>
-      )}
-    </div>
-  );
-};
+            {item}
+          </Link>
+        ))}
+        <Link
+          href="/pdf/amrutresume.pdf"
+          download="AmrutDeshpande_Resume.pdf"
+          className="hover:text-primary text-sm font-medium"
+        >
+          Resume
+        </Link>
+      </nav>
+    </PopoverContent>
+  </Popover>
+</div>
+    </header>
+  )
+}
 
-export default Navbar;
+export default Navbar
