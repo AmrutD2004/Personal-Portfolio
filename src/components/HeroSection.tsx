@@ -97,7 +97,8 @@ const HeroSection = () => {
                 </div>
 
                 {/* Social Links */}
-                <div className='flex flex-row gap-6 text-4xl social-links block1'>
+                <div className='flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 text-lg sm:text-2xl social-links block1 items-center justify-center'>
+
                     <Link href='https://github.com/AmrutD2004/' target="_blank" rel="noopener noreferrer">
                         <button className='aria-label flex items-center'>
                             <FaGithub className="me-2" />Github
@@ -115,7 +116,7 @@ const HeroSection = () => {
                     </Link>
                     
                 </div>
-                <div className='flex flex-col mt-9 social-links block1'>
+                <div className='flex flex-col mt-9 ms-5 social-links block1 items-center'>
                         <Link href="/pdf/AmrutDeshpandeResume.pdf"
           download="AmrutDeshpande_Resume.pdf">
                         <button className='flex items-center font-medium'>
