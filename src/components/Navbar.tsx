@@ -69,7 +69,7 @@ const Navbar = () => {
           </Link>
         ))}
         <Link
-          href="/pdf/amrutresume.pdf"
+          href="/pdf/AmrutDeshpandeResume.pdf"
           download="AmrutDeshpande_Resume.pdf"
           className="hover:text-primary text-sm font-medium"
         >
