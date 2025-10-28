@@ -28,14 +28,20 @@ const HeroSection = () => {
             title: "RedStore",
             description: "An online E-commerce Website Using Django.",
             image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1751905369/ecommerece_lkept6.png",
-            link: "#",
+            link: "https://github.com/AmrutD2004/E-Commerce-Django",
         },
         {
             title: "TravelWorld",
             description: "A Travel Website to explore world.",
             image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1751905369/TravelWorld_oewxwr.png",
-            link: "#",
-        }
+            link: "https://github.com/AmrutD2004/Travel-Website-Using-Olama",
+        },
+        {
+            title: "MotoRentel",
+            description: "A Motorcycle Rental Service Website.",
+            image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1761671330/Screenshot_2025-10-28_223513_eaktye.png",
+            link: "https://github.com/AmrutD2004/MotoRental",
+        },
     ];
 
     // Duplicate the cards for seamless looping
