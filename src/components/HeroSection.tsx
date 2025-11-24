@@ -163,10 +163,7 @@ const HeroSection = () => {
                 <br />
                 <div className="max-w-4xl ms-auto mx-auto space-y-6 text-slate-300 text-lg sm:text-xl leading-relaxed">
                     <p className="text-lg leading-relaxed">
-                        Hello! I&apos;m <strong className='font-bold underline'>Amrut Deshpande</strong>, a final-year B.Tech student at MGM&apos;s Jawaharlal Nehru Engineering College. I&apos;m passionate about becoming a skilled full-stack developer, with a focus on mastering Python and modern web technologies.
-                    </p>
-                    <p className='text-lg leading-relaxed'>
-                        I believe in continuous learning, staying curious, and contributing positively to every team I&apos;m part of. I&apos;m excited to grow in this field and work on meaningful tech projects.
+                        Hello! I&apos;m <strong className='font-bold underline'>Amrut Deshpande</strong>, A passionate and results-driven software developer with a deep enthusiasm for building robust, scalable, and intuitive web applications. I possess a strong command of the full-stack, from architecting efficient backends with Python and Django to crafting dynamic frontends with React and RESTful APIs. My strong problem-solving skills and adaptability make me an excellent fit for a software engineering role, where I am eager to apply my abilities to contribute valuable solutions from day one.
                     </p>
                     <p className='text-lg leading-relaxed'>
                         Thanks for visiting my portfolio — feel free to get in touch!

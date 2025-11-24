@@ -15,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }} suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dq7ldqmy4/image/upload/v1763981661/ADLogo_ydjyxa.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link 
