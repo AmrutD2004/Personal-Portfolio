@@ -36,7 +36,7 @@ const Navbar = () => {
           <NavigationMenuItem>
             <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
               <Link
-                href="/pdf/amrutresume.pdf"
+                href="/pdf/AmrutDeshpandeResume.pdf"
                 download="AmrutDeshpande_Resume.pdf"
               >
                 Resume

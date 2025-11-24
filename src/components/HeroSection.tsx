@@ -42,6 +42,12 @@ const HeroSection = () => {
             image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1761671330/Screenshot_2025-10-28_223513_eaktye.png",
             link: "https://github.com/AmrutD2004/MotoRental",
         },
+        {
+            title: "Invoicy",
+            description: "AI Powered invoice generator",
+            image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1763979988/Screenshot_2025-11-24_155522_dawte2.png",
+            link: "https://invoicy-d2.onrender.com/",
+        },
     ];
 
     // Duplicate the cards for seamless looping
