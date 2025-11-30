@@ -18,7 +18,7 @@ import {
 
 const Navbar = () => {
   return (
-    <header className="w-full px-6 py-4 flex items-center justify-center bg-black">
+    <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 w-full px-6 py-4 flex items-center justify-center bg-black">
 
       {/* Desktop Navigation */}
       <NavigationMenu className="hidden md:flex">
