@@ -18,11 +18,31 @@ import '../assets/style.css';
 
 const HeroSection = () => {
     const cardData = [
+        
+        
+        {
+            title: "Invoicy",
+            description: "AI Powered invoice generator",
+            image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1763979988/Screenshot_2025-11-24_155522_dawte2.png",
+            link: "https://invoicy-d2.onrender.com/",
+        },
+        {
+            title: "RateX",
+            description: "RateX-AI-powered-CryptoCurrency-Price-Tracking",
+            image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1764528817/Screenshot_2025-12-01_002255_glgsdz.png",
+            link: "https://ratexx.onrender.com/",
+        },
         {
             title: "TrakX",
             description: "Daily expense tracker with analytics and PDF reports.",
             image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1754300938/Screenshot_2025-08-04_151743_jinehu.png",
             link: "https://daily-expense-tracker-frontend.onrender.com"
+        },
+        {
+            title: "MotoRentel",
+            description: "A Motorcycle Rental Service Website.",
+            image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1761671330/Screenshot_2025-10-28_223513_eaktye.png",
+            link: "https://github.com/AmrutD2004/MotoRental",
         },
         {
             title: "RedStore",
@@ -36,21 +56,10 @@ const HeroSection = () => {
             image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1751905369/TravelWorld_oewxwr.png",
             link: "https://github.com/AmrutD2004/Travel-Website-Using-Olama",
         },
-        {
-            title: "MotoRentel",
-            description: "A Motorcycle Rental Service Website.",
-            image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1761671330/Screenshot_2025-10-28_223513_eaktye.png",
-            link: "https://github.com/AmrutD2004/MotoRental",
-        },
-        {
-            title: "Invoicy",
-            description: "AI Powered invoice generator",
-            image: "https://res.cloudinary.com/dq7ldqmy4/image/upload/v1763979988/Screenshot_2025-11-24_155522_dawte2.png",
-            link: "https://invoicy-d2.onrender.com/",
-        },
     ];
 
     // Duplicate the cards for seamless looping
+
     const duplicatedCards = [...cardData, ...cardData];
 
     return (
